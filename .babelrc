@@ -1,0 +1,10 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      // ssr에 의해 styled-components 스타일이 적용 전에 화면에 렌더링 되는 문제 방지
+      "babel-plugin-styled-components",
+      { "fileName": true, "displayName": true, "pure": true, "ssr": true }
+    ]
+  ]
+}
