@@ -21,7 +21,7 @@ const Btn = styled.button<{
   cursor: ${(props) => (!props.disable ? "pointer" : "default")};
   span {
     font-family: "Noto Sans KR";
-    font-size: 14px;
+    font-size: 12px;
     color: #111111;
   }
 `;

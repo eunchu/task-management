@@ -1,11 +1,13 @@
-import { IUser } from "./interface/usersApi";
-import { userClient } from ".";
+import axios from "axios";
 
-export const usersFactory = () => {
+import { IUser } from "./interface/usersApi";
+import { IFactory } from "./interface/apiFactory";
+
+export const usersFactory = ({ baseURL }: IFactory) => {
   // NOTE [Create]
   const createUser = async (user: IUser) => {
-    return await userClient
-      .post("", user, {
+    return await axios
+      .post(baseURL, user, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -15,7 +17,7 @@ export const usersFactory = () => {
 
   // NOTE [Get]
   const readUser = async () => {
-    return (await userClient.get("")).data;
+    return (await axios.get(baseURL)).data;
   };
 
   return {
