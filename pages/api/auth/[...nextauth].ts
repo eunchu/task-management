@@ -20,7 +20,7 @@ export default NextAuth({
         const { userId, password } = credentials;
 
         const allUsers = await usersAPIs.readUser();
-        const exUser = allUsers.users.filter(
+        const exUser = allUsers?.users.filter(
           (user: any) => user.userId === userId
         )[0];
         if (!exUser) {
@@ -59,7 +59,7 @@ export default NextAuth({
     },
   },
   pages: {
-    signIn: "/movieApp/login",
+    signIn: "/login",
   },
   secret: process.env.NEXTAUTH_SECRET,
 });

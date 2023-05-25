@@ -4,7 +4,6 @@ import { connectToDatabase } from "@/lib/mongodb";
 import { ITask } from "@/api/interface/taskApi";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  // NOTE 목록
   const { db } = await connectToDatabase();
   const tasks = db.collection("tasks");
 
