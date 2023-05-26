@@ -2,10 +2,7 @@ import { DefaultTheme } from "styled-components";
 
 export const theme: DefaultTheme = {
   color: {
-    textSub: "#bdbdbd",
-    textDeepSub: "#8a8a8a",
-    textFooter: "#555555",
-    point: "#deb83e",
-    error: "#c10707",
+    textDesc: "#8c8c8c",
+    textDescEmph: "#444444",
   },
 };

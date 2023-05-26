@@ -1,6 +1,8 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+
 import { usersAPIs } from "@/apis";
+import { IUser } from "@/apis/interface/usersApi";
 
 export default NextAuth({
   providers: [
@@ -20,14 +22,18 @@ export default NextAuth({
         const { userId, password } = credentials;
 
         const allUsers = await usersAPIs.readUser();
-        const exUser = allUsers?.users.filter(
-          (user: any) => user.userId === userId
+        console.log("userId", allUsers);
+        const exUser = allUsers?.data.filter(
+          (user: IUser) => user.userId === userId
         )[0];
         if (!exUser) {
           throw new Error("존재하지 않는 아이디입니다");
         }
+
         const pwChecked = password === exUser.password;
         if (!pwChecked) throw new Error("비밀먼호가 일치하지 않습니다");
+
+        console.log("exUser", exUser);
 
         return exUser;
       },

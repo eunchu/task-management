@@ -16,7 +16,7 @@ const GlobalStyle: any = createGlobalStyle`
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 12px;
     font-weight: normal;
-    line-height: 1.4;
+    line-height: 1.8;
     
     color: #111111;
 

@@ -8,6 +8,8 @@ const Container = styled.div`
 
   height: 100%;
   width: 100%;
+
+  padding-top: 30px;
 `;
 const Left = styled.div`
   width: 250px;

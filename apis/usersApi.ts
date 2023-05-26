@@ -16,9 +16,7 @@ export const usersFactory = ({ baseURL }: IFactory) => {
   };
 
   // NOTE [Get]
-  const readUser = async () => {
-    return (await axios.get(baseURL)).data;
-  };
+  const readUser = async () => (await axios.get(baseURL)).data;
 
   return {
     createUser,
