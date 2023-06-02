@@ -1,7 +1,7 @@
 import axios from "axios";
 
-import { IUser } from "./interface/usersApi";
-import { IFactory } from "./interface/apiFactory";
+import { IUser } from "./interface/user";
+import { IFactory } from "./interface/factory";
 
 export const usersFactory = ({ baseURL }: IFactory) => {
   // NOTE [Create]

@@ -1,12 +1,14 @@
 import axios from "axios";
 
-import { IFactory } from "./interface/apiFactory";
-import { ITasksAPIRes } from "./interface/taskApi";
+import { IFactory } from "./interface/factory";
+import { ITask, ITasksAPIRes } from "./interface/task";
 
 export const tasksFactory = ({ baseURL }: IFactory) => {
+  // NOTE [Get]
   const getTasks = async () => (await axios.get(baseURL)).data as ITasksAPIRes;
 
-  const createTask = async (task: any) => {
+  // NOTE [Create]
+  const createTask = async (task: ITask) => {
     return axios
       .post(baseURL, task, {
         headers: {
@@ -16,5 +18,15 @@ export const tasksFactory = ({ baseURL }: IFactory) => {
       .then((res) => res.data);
   };
 
-  return { getTasks, createTask };
+  // NOTE [Update]
+  const updateTask = async (task: ITask) =>
+    await axios
+      .put(baseURL, task, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => res.data);
+
+  return { getTasks, createTask, updateTask };
 };

@@ -2,7 +2,7 @@ import { useMutation } from "react-query";
 
 import { Button } from "@/components/atoms/button";
 import { usersAPIs } from "@/apis";
-import { IUser } from "@/apis/interface/usersApi";
+import { IUser } from "@/apis/interface/user";
 
 const Join = () => {
   const createUser = async (user: IUser) => usersAPIs.createUser(user);

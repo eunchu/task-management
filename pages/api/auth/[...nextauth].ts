@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 import { usersAPIs } from "@/apis";
-import { IUser } from "@/apis/interface/usersApi";
+import { IUser } from "@/apis/interface/user";
 
 export default NextAuth({
   providers: [

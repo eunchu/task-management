@@ -9,7 +9,8 @@
       "@/utils/*": ["utils/*"],
       "@/config/*": ["config/*"],
       "@/public/*": ["public/*"],
-      "@/lib/*": ["lib/*"]
+      "@/lib/*": ["lib/*"],
+      "@/consts/*": ["consts/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

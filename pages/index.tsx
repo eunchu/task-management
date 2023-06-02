@@ -9,21 +9,20 @@ const Container = styled.div`
   height: 100%;
   width: 100%;
 
-  padding-top: 30px;
+  overflow: auto;
 `;
 const Left = styled.div`
   width: 250px;
-
-  border: 1px solid red;
+  min-width: 250px;
 `;
 const Contents = styled.div`
-  width: 0;
-  flex-grow: 1;
+  width: 100%;
 `;
 const Right = styled.div`
   width: 250px;
+  min-width: 250px;
 
-  border: 1px solid red;
+  border-left: 1px solid #f4f5f7;
 `;
 
 const Home = () => {

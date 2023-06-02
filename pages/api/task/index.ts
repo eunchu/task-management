@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 import { connectToDatabase } from "@/lib/mongodb";
-import { ITask } from "@/api/interface/taskApi";
+import { ITask } from "@/apis/interface/task";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { db } = await connectToDatabase();
@@ -38,4 +38,5 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       .json({ status: 200, message: "Update is Successfuly" });
   }
 };
+
 export default handler;

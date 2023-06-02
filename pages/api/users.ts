@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
 import { connectToDatabase } from "@/lib/mongodb";
-import { IUser } from "@/api/interface/usersApi";
+import { IUser } from "@/apis/interface/user";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { db } = await connectToDatabase();
