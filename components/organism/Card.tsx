@@ -4,6 +4,7 @@ import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
 
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import Paper from "@mui/material/Paper";
 
 import { ITask } from "@/apis/interface/task";
 
@@ -16,7 +17,9 @@ const Box = styled.div`
 
   background-color: #ffffff;
   border-radius: 4px;
-  box-shadow: 4px 4px 10px -8px rgba(161, 161, 161, 0.3);
+  box-shadow: 0px 11px 15px -7px rgba(134, 134, 134, 0.1),
+    0px 14px 18px 3px rgba(137, 137, 137, 0.1);
+  /* box-shadow: 4px 4px 10px -8px rgba(161, 161, 161, 0.3); */
 
   margin-bottom: 16px;
   padding: 10px;

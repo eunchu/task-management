@@ -1,1 +1,1 @@
-export { commonAtom } from "./commonAtom";
+export { menuAtom, activeMenuAtom } from "./commonAtom";

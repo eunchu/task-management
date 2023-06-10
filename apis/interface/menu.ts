@@ -1,12 +1,13 @@
-interface ISubMenu {
+export interface IMenus {
   id: number;
   name: string;
+  subMenu: { id: number; name: string }[] | null;
 }
 
 export interface IMenu {
   id: number;
   name: string;
-  subMenu: ISubMenu[] | null;
+  menus: IMenus[];
   auth: "all" | "owner" | "team";
 }
 

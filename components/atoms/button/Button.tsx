@@ -13,7 +13,7 @@ const Btn = styled.button<{
   width: ${(props) => props.width};
   height: ${(props) => props.height};
 
-  background-color: #dddddd;
+  background-color: #2d4acc;
   border-radius: 4px;
   opacity: ${(props) => props.disable && 0.5};
 
@@ -22,7 +22,12 @@ const Btn = styled.button<{
   span {
     font-family: "Noto Sans KR";
     font-size: 12px;
-    color: #111111;
+    font-weight: 500;
+    color: #ffffff;
+  }
+
+  &:hover {
+    background-color: #233aa0;
   }
 `;
 

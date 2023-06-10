@@ -1,7 +1,11 @@
-import Menu from "@/components/organism/Menu";
 import styled from "styled-components";
-import Main from "./main";
+import { motion } from "framer-motion";
+
+import { menuAtom } from "@/store";
+import Menu from "@/components/organism/Menu";
+import Tasks from "./tasks";
 import UserInfo from "./userInfo";
+import { useRecoilValue } from "recoil";
 
 const Container = styled.div`
   display: flex;
@@ -11,9 +15,9 @@ const Container = styled.div`
 
   overflow: auto;
 `;
-const Left = styled.div`
-  width: 250px;
-  min-width: 250px;
+const Left = styled(motion.div)<{ isMenuOpen: boolean }>`
+  width: 220px;
+  min-width: ${(props) => props.isMenuOpen && "220px"};
 `;
 const Contents = styled.div`
   width: 100%;
@@ -26,13 +30,28 @@ const Right = styled.div`
 `;
 
 const Home = () => {
+  const isMenuOpen = useRecoilValue(menuAtom);
+
+  const openVariants = {
+    initial: {
+      width: 250,
+    },
+    click: {
+      width: 84,
+    },
+  };
+
   return (
     <Container>
-      <Left>
+      <Left
+        isMenuOpen={isMenuOpen}
+        variants={openVariants}
+        animate={isMenuOpen ? "initial" : "click"}
+      >
         <Menu />
       </Left>
       <Contents>
-        <Main />
+        <Tasks />
       </Contents>
       <Right>
         <UserInfo />
