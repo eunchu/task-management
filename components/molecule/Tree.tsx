@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import styled from "styled-components";
 import { useRecoilState } from "recoil";
 
@@ -9,6 +9,7 @@ import TaskAltIcon from "@mui/icons-material/TaskAlt";
 
 import { IMenus } from "@/apis/interface/menu";
 import { activeMenuAtom, menuAtom } from "@/store";
+import { useIsMobile } from "@/hooks";
 
 const Container = styled.ul`
   height: 100%;
@@ -48,6 +49,8 @@ interface ITree {
   menus: IMenus[];
 }
 const Tree = ({ menus }: ITree) => {
+  const isMobile = useIsMobile();
+
   const [isOpen, setIsOpen] = useRecoilState(menuAtom);
   const [active, setActive] = useRecoilState(activeMenuAtom);
 
@@ -72,6 +75,12 @@ const Tree = ({ menus }: ITree) => {
     setActive(name);
     setIsOpen(true);
   };
+
+  // NOTE 데스크탑 사이즈가 아닌 경우 메뉴 최소화
+  useEffect(() => {
+    if (isMobile) setIsOpen(false);
+    else setIsOpen(true);
+  }, [isMobile]);
 
   return (
     <Container>
