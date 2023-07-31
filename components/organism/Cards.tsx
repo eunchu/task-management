@@ -5,8 +5,6 @@ import { ITask } from "@/apis/interface/task";
 import Card from "@/components/organism/Card";
 
 const Container = styled.div`
-  min-width: 208px;
-  width: 208px;
   height: 100%;
 
   display: flex;
@@ -49,9 +47,6 @@ const Box = styled.div<{
 
   background-color: ${(props) => props.isDraggingOver && "#f4f5f7"};
   border-radius: 4px;
-
-  overflow-x: hidden;
-  overflow-y: auto;
 `;
 const AddBox = styled.div`
   height: 48px;
